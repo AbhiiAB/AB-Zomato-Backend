@@ -6,7 +6,7 @@ let a = async (err) => {
     return console.log("Failed to connect to MySQL Server/Database", err);
   else {
     await new Promise((resolve, reject) => {
-      con.query("DROP TABLE IF EXISTS orders", (err) => {
+      con.query("DROP TABLE IF EXISTS orders, myOrders", (err) => {
         if (err) reject(err);
         else {
           resolve(1);
