@@ -2,9 +2,7 @@ var mysql = require("mysql");
 
 require("dotenv").config();
 
-var mySQL = process.env.MYSQL_URI;
-
-var con = mysql.createConnection(mySQL);
+var con = mysql.createConnection(process.env.MYSQL_URI);
 
 con.connect(function (err) {
   if (err) {

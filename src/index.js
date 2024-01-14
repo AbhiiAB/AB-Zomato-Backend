@@ -80,10 +80,10 @@ app.post("/addDish", (req, res) => {
   // console.log(req.body);
   try {
     let sqlQuery =
-      "INSERT INTO  myOrders (`_id`,title`,`quantity`,`dateMade`)  VALUES(?)";
+      "INSERT INTO  myOrders (`_id`,`image`,`quantity`,`dateMade`)  VALUES(?)";
     let values = [
       req.body.id,
-      req.body.image,
+      // req.body.image,
       req.body.title,
       req.body.quantity,
       req.body.currDate,
@@ -110,6 +110,7 @@ app.get("/allOrders", (req, res) => {
       console.log("Error : ", err);
       res.json(err);
     } else {
+      console.log(res.json(data));
       res.json(data);
     }
   });
